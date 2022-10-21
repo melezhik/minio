@@ -18,7 +18,7 @@ tasks:
   -
     name: config
     language: Bash
-    code:    
+    code: |
       sudo sysctl net.ipv6.conf.all.disable_ipv6=0
       sudo sysctl net.ipv6.conf.default.disable_ipv6=0
       sudo apk add go
