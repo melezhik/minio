@@ -2,7 +2,7 @@ tasks:
   -
     name: func-tests
     default: true
-    langugae: Bash
+    language: Bash
     code: |
       set -e
       go version
