@@ -1,0 +1,22 @@
+- tasks:
+  -
+    name: func-tests
+    default: true
+    langugae: Bash
+    code: |
+      set -e
+      cd source
+      export CGO_ENABLED=0
+      export GO111MODULE=on
+      export MINIO_KMS_SECRET_KEY="my-minio-key:OSMM+vkKUTCvQs9YL/CVMIMt43HFhkUpqJxTmGl6rYw="
+      export MINIO_KMS_AUTO_ENCRYPTION=on
+      make verify
+    depends:
+      -
+        name: config
+  -
+    name: config
+    language: Bash
+    code:    
+      sudo sysctl net.ipv6.conf.all.disable_ipv6=0
+      sudo sysctl net.ipv6.conf.default.disable_ipv6=0
